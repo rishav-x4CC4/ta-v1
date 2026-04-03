@@ -64,6 +64,7 @@ export default function LandingScreen({ onStart, onGoTo }) {
                 padding: 'clamp(24px, 4vw, 60px) clamp(16px, 4vw, 40px)',
                 position: 'relative',
             }}>
+            <div style={{ width: '100%', transform: 'translateY(clamp(14px, 2.8vh, 30px))' }}>
             {/* ══ HERO TITLE — LARGE, word-by-word animated ══ */}
             <div style={{ width: '100%', margin: '0 0 24px', perspective: 1200, pointerEvents: 'none' }}>
                 <div style={{
@@ -98,7 +99,7 @@ export default function LandingScreen({ onStart, onGoTo }) {
                         </motion.span>
                     ))}
                 </div>
-            </div>
+                </div>
 
             {/* Animated underline */}
             <motion.div
@@ -123,11 +124,22 @@ export default function LandingScreen({ onStart, onGoTo }) {
                     >{w}</motion.span>
                 ))}
             </motion.p>
+            </div>
                 {/* Scroll indicator */}
                 <motion.div
                     animate={{ y: [0, 10, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                    style={{ marginTop: 'auto', paddingTop: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, opacity: 0.5 }}
+                    style={{
+                        position: 'absolute',
+                        left: '50%',
+                        bottom: 'clamp(16px, 3vh, 30px)',
+                        transform: 'translateX(-50%)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: 8,
+                        opacity: 0.5,
+                    }}
                 >
                     <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '.75rem', letterSpacing: '.15em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Scroll to explore</span>
                     <span style={{ fontSize: '1.5rem' }}>↓</span>
